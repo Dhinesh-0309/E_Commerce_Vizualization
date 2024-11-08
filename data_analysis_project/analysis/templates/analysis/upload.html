@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>File Upload</title>
+</head>
+<body>
+    <h1>Upload File</h1>
+    <form method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        
+        <!-- Render the file input directly and specify only one upload button -->
+        <label for="file">Select a CSV file to upload:</label>
+        <input type="file" name="file" id="file" accept=".csv" required>
+        
+        <!-- Single upload button -->
+        <button type="submit">Upload</button>
+    </form>
+
+    {% if image %}
+        <h2>Visualization</h2>
+        <img src="data:image/png;base64,{{ image }}" alt="Visualization">
+    {% endif %}
+</body>
+</html>
