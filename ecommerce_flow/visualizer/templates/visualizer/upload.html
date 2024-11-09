@@ -1,0 +1,6 @@
+<form method="POST" enctype="multipart/form-data">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <input type="file" name="file" required>  <!-- Ensure "file" is the correct name -->
+    <button type="submit">Upload</button>
+</form>
